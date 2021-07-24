@@ -1,0 +1,363 @@
+@import url("https://fonts.googleapis.com/css2?family=Cabin:wght@700&family=Source+Sans+Pro:wght@400;600&display=swap");
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  background-image: url(../img/wallpaper.jpg);
+  background-size: cover;
+}
+
+.date {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  color: white;
+  transform: translate(-50%, -50%);
+  padding: 2rem;
+  text-align: center;
+}
+
+.date > * {
+  line-height: 5px;
+  font-family: "Cabin", sans-serif;
+}
+
+h1 {
+  font-size: 6rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+/* Taskbar */
+
+.taskbar {
+  position: absolute;
+  display: flex;
+  bottom: 0;
+  height: 50px;
+  background: linear-gradient(
+    to right,
+    rgb(49, 49, 48, 0.9),
+    rgb(47, 48, 48, 0.9)
+  );
+  width: 100%;
+  justify-content: center;
+}
+
+.app {
+  width: 60px;
+  height: 50px;
+}
+
+.app:hover {
+  background-color: rgb(47, 48, 48, 1);
+}
+
+.notepad-icon {
+  background-color: rgb(47, 48, 48, 0);
+  background-image: url(../img/notepad.png);
+  background-repeat: no-repeat;
+  background-size: 50px 50px;
+  display: block;
+  text-indent: -9999px;
+  text-decoration: none;
+  width: 50px;
+  height: 50px;
+  margin: auto;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.solitaire-icon {
+  background-color: rgb(47, 48, 48, 0);
+  background-image: url(../img/solitaire.jpg);
+  background-repeat: no-repeat;
+  background-size: 35px 35px;
+  background-position: center center;
+  display: block;
+  position: relative;
+  text-indent: -9999px;
+  text-decoration: none;
+  width: 50px;
+  height: 50px;
+  margin: auto;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.google-icon {
+  background-color: rgb(47, 48, 48, 0);
+  background-image: url(../img/google.png);
+  background-repeat: no-repeat;
+  background-size: 30px 30px;
+  background-position: center center;
+  display: block;
+  width: 50px;
+  height: 50px;
+  margin: auto;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.task-icon {
+  background-color: rgb(47, 48, 48, 0);
+  background-image: url(../img/task.png);
+  background-repeat: no-repeat;
+  background-size: 35px 35px;
+  background-position: center center;
+  display: block;
+  width: 50px;
+  height: 50px;
+  margin: auto;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.calculator-icon {
+  background-color: rgb(47, 48, 48, 0);
+  background-image: url(../img/calculator.png);
+  background-repeat: no-repeat;
+  background-size: 33px 28px;
+  background-position: center center;
+  display: block;
+  width: 50px;
+  height: 50px;
+  margin: auto;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Modal styles: Window simulation */
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  z-index: 10;
+  background-color: white;
+  width: 500px;
+  max-width: 88%;
+}
+
+.modal.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* App 01: Notepad */
+
+.notepad {
+  border: 1px solid rgb(47, 48, 48, 0.7);
+}
+
+.notepad-header,
+.solitaire-header,
+.google-header,
+.task-header,
+.calculator-header {
+  padding: 0.2rem 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 600;
+}
+
+.notepad-header .close-button,
+.solitaire-header .close-button,
+.google-header .close-button,
+.task-header .close-button,
+.calculator-header .close-button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.notepad-menu,
+.google-menu,
+.task-menu {
+  border-bottom: 1px solid #919191;
+  padding: 0 0.1rem;
+}
+
+.notepad-menu a,
+.google-menu a,
+.task-menu a {
+  display: inline-block;
+  text-decoration: none;
+  font-family: "Source Sans Pro", sans-serif;
+  color: black;
+  padding: 0.3rem 0.5rem;
+  font-size: 0.8rem;
+}
+
+.notepad-menu a:hover,
+.google-menu a:hover,
+.task-menu a:hover {
+  background-color: #72bbfb60;
+}
+
+.notepad-body {
+  border: none;
+  font-family: "Source Sans Pro", sans-serif;
+  padding: 0.1rem;
+  outline: none;
+  font: 400 1rem "Source Sans Pro", sans-serif;
+}
+
+/* App 02: Solitaire */
+
+.solitaire {
+  width: auto;
+}
+
+/* App 03: Google */
+
+.google-body {
+  padding: 0.5rem;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.account {
+  position: absolute;
+  right: 0%;
+  margin: 0.2rem 0.8rem;
+}
+
+.account span {
+  background-color: #4169e1;
+  color: white;
+  border-radius: 50%;
+  padding: 0.4rem 0.7rem;
+  font-weight: 600;
+}
+
+.search {
+  position: relative;
+  width: 70%;
+  margin: 6.5rem auto;
+}
+
+.logo {
+  background-color: rgb(47, 48, 48, 0);
+  background-image: url(../img/google-logo.png);
+  background-repeat: no-repeat;
+  background-size: 250px 80px;
+  background-position: center center;
+  width: 250px;
+  height: 150px;
+  margin: auto;
+}
+
+.input-search {
+  display: block;
+  margin: auto;
+  outline: none;
+
+  padding: 0.5rem 0.8rem;
+}
+
+.btn-search {
+  outline: none;
+  border-radius: 50px;
+  background-color: #2f3030;
+  color: white;
+  position: relative;
+  padding: 0.6rem 1.3rem;
+  margin: 1rem auto;
+  border: none;
+  cursor: pointer;
+  left: 35%;
+}
+
+.btn-search:hover {
+  background-color: #4169e1;
+  color: black;
+}
+
+/* App 04: Task manager */
+
+.task {
+  width: auto;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.task-body {
+  display: grid;
+  grid-gap: 0;
+  grid-template-columns: 300px 1fr 1fr 1fr;
+  grid-template-rows: repeat(5, 35px);
+  padding: 1rem 0.5rem;
+}
+
+.task-body .column-right {
+  text-align: right;
+  padding-left: 1rem;
+  border-left: 1px solid #717272;
+  padding-right: 0.3rem;
+}
+
+.task-title {
+  padding: 0.3rem 0.7rem;
+  border-bottom: 1px solid #717272;
+}
+
+.task-body .number1 {
+  background-color: #ffd264;
+}
+
+.task-body .number2 {
+  background-color: #f9eca8;
+}
+
+.task-body .number3 {
+  background-color: #fff4c4;
+}
+
+/* App 05: Calculator */
+
+.calculator {
+  width: auto;
+}
+
+.calculator-body {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(6, 70px);
+  justify-items: center;
+  padding: 0.5rem;
+}
+
+.calculator-body .result,
+.calculator-body .igual {
+  grid-column: span 4;
+}
+
+.calculator-body .result textarea {
+  padding: 0.5rem;
+  font: 400 1rem "Source Sans Pro", sans-serif;
+  outline: none;
+  text-align: right;
+}
+
+.calculator-body .zero {
+  grid-column: span 3;
+}
+
+.calculator-body > div > button {
+  padding: 0.5rem 1.5rem;
+}

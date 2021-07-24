@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <title>OS Simulator</title>
+  </head>
+  <body>
+    <div class="date">
+      <h1 id="time"></h1>
+      <h3 id="date"></h3>
+    </div>
+
+    <div class="modal notepad" id="modal">
+      <div class="notepad-header">
+        Notepad <button data-close-button class="close-button">&times;</button>
+      </div>
+      <div class="notepad-menu">
+        <a href="#">Nuevo</a>
+        <a href="#">Abrir</a>
+        <a href="#">Guardar</a>
+      </div>
+      <textarea class="notepad-body" rows="10" cols="67"></textarea>
+    </div>
+
+    <div class="modal solitaire" id="modal2">
+      <div class="solitaire-header">
+        Solitaire
+        <button class="close-button" id="solitaire-close-button">
+          &times;
+        </button>
+      </div>
+      <img src="img/solitaire-animation.gif" alt="" />
+    </div>
+
+    <div class="modal google" id="google">
+      <div class="google-header">
+        Google
+        <button class="close-button" id="google-close-button">&times;</button>
+      </div>
+      <div class="google-menu">
+        <a href="#">Marcadores</a>
+        <a href="#">Nueva pestaña</a>
+        <a href="#">Nueva ventana</a>
+        <a href="#">Herramientas para desarrolladores</a>
+      </div>
+      <div class="google-body">
+        <div class="account">Maria Riera <span>M</span></div>
+        <div class="search">
+          <div class="logo"></div>
+          <textarea class="input-search" cols="43" rows="1"></textarea>
+          <button class="btn-search">Buscar</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal task" id="task">
+      <div class="task-header">
+        Task manager
+        <button class="close-button" id="task-close-button">&times;</button>
+      </div>
+      <div class="task-menu">
+        <a href="#">Procesos</a>
+        <a href="#">Rendimiento</a>
+      </div>
+      <div class="task-body">
+        <div></div>
+        <div class="column-right">84%</div>
+        <div class="column-right">81%</div>
+        <div class="column-right">7%</div>
+        <div class="task-title">Aplicaciones</div>
+        <div class="task-title column-right">CPU</div>
+        <div class="task-title column-right">Memoria</div>
+        <div class="task-title column-right">Disco</div>
+        <div>Calculadora</div>
+        <div class="column-right number3">11,1%</div>
+        <div class="column-right number2">299,0 MB</div>
+        <div class="column-right number3">0,1 MB/s</div>
+        <div>Google Chrome</div>
+        <div class="column-right number1">40,4%</div>
+        <div class="column-right number1">620,3 MB</div>
+        <div class="column-right number3">0,3 MB/s</div>
+        <div>Administrador de tareas</div>
+        <div class="column-right number2">2%</div>
+        <div class="column-right number2">107,4 MB</div>
+        <div class="column-right number3">0 MB/s</div>
+      </div>
+    </div>
+
+    <div class="modal calculator" id="calculator">
+      <div class="calculator-header">
+        Calculator
+        <button class="close-button" id="calculator-close-button">
+          &times;
+        </button>
+      </div>
+      <div class="calculator-body">
+        <div class="result"><textarea cols="30" rows="1"></textarea></div>
+        <div><button>7</button></div>
+        <div><button>8</button></div>
+        <div><button>9</button></div>
+        <div><button>/</button></div>
+        <div><button>4</button></div>
+        <div><button>5</button></div>
+        <div><button>6</button></div>
+        <div><button>*</button></div>
+        <div><button>1</button></div>
+        <div><button>2</button></div>
+        <div><button>3</button></div>
+        <div><button>-</button></div>
+        <div class="zero"><button>0</button></div>
+        <div><button>+</button></div>
+        <div class="igual"><button>=</button></div>
+      </div>
+    </div>
+
+    <div class="taskbar">
+      <div class="app">
+        <button data-modal-target="#modal" class="notepad-icon"></button>
+      </div>
+      <div class="app">
+        <button class="solitaire-icon" id="solitaire-button"></button>
+      </div>
+      <div class="app">
+        <button class="google-icon" id="google-button"></button>
+      </div>
+      <div class="app">
+        <button class="task-icon" id="task-button"></button>
+      </div>
+      <div class="app">
+        <button class="calculator-icon" id="calculator-button"></button>
+      </div>
+    </div>
+    <script src="js/app.js"></script>
+  </body>
+</html>
